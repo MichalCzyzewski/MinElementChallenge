@@ -10,7 +10,7 @@ public class Main
     public static void main(String[] args)
     {
         int[] myArray = readIntegers();
-        findMin(myArray);
+       findMin(myArray);
 
     }
 
@@ -29,17 +29,19 @@ public class Main
             return arrayEnter;
     }
 
-    public static int findMin(int[] array)
+    public static void findMin(int[] array)
     {
         int minNumber = Integer.MAX_VALUE;
 
         for (int x = 0; x< array.length;x++)
         {
+
             if (array[x] < minNumber )
             {
                 minNumber = array[x];
             }
         }
-        return minNumber;
+        System.out.println();
+        System.out.println( "The minimal numebr in array is : " + minNumber);
     }
 }
