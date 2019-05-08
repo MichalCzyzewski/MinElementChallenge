@@ -9,39 +9,79 @@ public class Main
 
     public static void main(String[] args)
     {
-        int[] myArray = readIntegers();
-       findMin(myArray);
-
-    }
-
-
-    public static int[] readIntegers()
-    {
-        System.out.print("How many Integers you want to enter ? :");
+        System.out.println("Enter count : ");
         int count = sc.nextInt();
-        int[] arrayEnter = new int[count];
-        System.out.println("Pleas enter " + count + " Integers numbers :");
-        for (int x = 0; x < arrayEnter.length; x++)
-        {
-            arrayEnter[x] = sc.nextInt();
-        }
+        sc.nextLine();
+        int[] array = readIntegers(count);
+        int returnMin = findMin(array);
+        System.out.println("min " + returnMin);
 
-            return arrayEnter;
+
     }
 
-    public static void findMin(int[] array)
+    private static int[] readIntegers(int count)
     {
-        int minNumber = Integer.MAX_VALUE;
+        int[] array = new int[count];
 
-        for (int x = 0; x< array.length;x++)
+        for (int x = 0; x < array.length; x++)
         {
+            System.out.println("Enter a number : ");
+            int number = sc.nextInt();
+            sc.nextLine();
+            array[x] = number;
+        }
+        return array;
+    }
 
-            if (array[x] < minNumber )
+
+    private static int findMin(int[] array)
+    {
+        int min = Integer.MAX_VALUE;
+        for (int x=0; x< array.length;x++){
+            int value = array[x];
+            if(value < min)
             {
-                minNumber = array[x];
+                min = value;
             }
         }
-        System.out.println();
-        System.out.println( "The minimal numebr in array is : " + minNumber);
+        return min;
     }
 }
+
+
+//    {
+//        int[] myArray = readIntegers();
+//       findMin(myArray);
+//
+//    }
+//
+//
+//    public static int[] readIntegers()
+//    {
+//        System.out.print("How many Integers you want to enter ? : ");
+//        int count = sc.nextInt();
+//        int[] arrayEnter = new int[count];
+//        System.out.println("Pleas enter " + count + " Integers numbers : ");
+//        for (int x = 0; x < arrayEnter.length; x++)
+//        {
+//            arrayEnter[x] = sc.nextInt();
+//        }
+//
+//            return arrayEnter;
+//    }
+//
+//    public static void findMin(int[] array)
+//    {
+//        int minNumber = Integer.MAX_VALUE;
+//
+//        for (int x = 0; x< array.length;x++)
+//        {
+//
+//            if (array[x] < minNumber )
+//            {
+//                minNumber = array[x];
+//            }
+//        }
+//        System.out.println();
+//        System.out.println( "The minimal numebr in array is : " + minNumber);
+//    }
