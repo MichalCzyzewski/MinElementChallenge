@@ -9,7 +9,8 @@ public class Main
 
     public static void main(String[] args)
     {
-
+        int[] myArray = readIntegers();
+        findMin(myArray);
 
     }
 
